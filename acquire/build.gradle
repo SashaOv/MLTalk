@@ -2,6 +2,7 @@ apply plugin: 'scala'
 apply plugin: 'application'
 
 mainClassName = "tutorial.Sampler"
+applicationDefaultJvmAgs= ["-Xmx1G"]
 
 repositories {
   maven { url "http://conjars.org/repo" }
