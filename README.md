@@ -37,5 +37,9 @@ Clone Github project:
 Execute build:
 
      > ./gradlew clean build
+     
+Run the sampler program:
 
-This is work in progress, please check back for more info.
+     > cd acquire
+     > ../gradlew run
+
