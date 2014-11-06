@@ -23,4 +23,19 @@ data from the subset:
     - The CSV export of this database is available [in this Box.com folder](https://app.box.com/s/e99lauqs8kdfxhh3fe5s)
 - [Million Song Subset Triplet Data](http://static.echonest.com/millionsongsubset_full.tar.gz)
 
+## Getting started
+
+Clone Github project:
+
+     > git clone https://github.com/SashaOv/MLTalk.git
+     > cd MLTalk
+     
+(Optional) Copy gradle dependencies to your installation from the flash drive
+ 
+     > rsync -arv /where/is/gradle-home/ ~/.gradle
+     
+Execute build:
+
+     > ./gradlew clean build
+
 This is work in progress, please check back for more info.
