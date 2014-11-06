@@ -16,7 +16,7 @@ class Sampler(args : Args) extends Job(args) with FieldConversions
   val TripletsSchema= List('user_id, 'song_id, 'count)
 
   val sampledTriplets= Tsv("data/train_triplets.txt", fields= TripletsSchema).read
-    .filter('user_id) { id: String => isInSample(id) }
+      .filter('user_id) { id: String => isInSample(id) }
 
   val numberedSongs= mapToNumber(metadata, 'song_id, 'sid)
   val numberedUsers= mapToNumber(sampledTriplets, 'user_id, 'uid)
@@ -32,7 +32,8 @@ class Sampler(args : Args) extends Job(args) with FieldConversions
 
   def isInSample(id: String)=  Math.abs(id.hashCode) < Int.MaxValue / 1024
 
-  def mapToNumber(pipe: Pipe, idFields: Fields, numberedId: Fields) = pipe.project(idFields)
+  def mapToNumber(pipe: Pipe, idFields: Fields, numberedId: Fields) =
+    pipe.project(idFields)
     .distinct(idFields)
     .toTypedPipe[String](Fields.ALL)
     .groupAll

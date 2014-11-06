@@ -1,6 +1,7 @@
-apply plugin: 'java'
 apply plugin: 'scala'
+apply plugin: 'application'
 
+mainClassName = "tutorial.Sampler"
 
 repositories {
   maven { url "http://conjars.org/repo" }
