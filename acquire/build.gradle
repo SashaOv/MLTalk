@@ -1,12 +1,18 @@
 apply plugin: 'java'
+apply plugin: 'scala'
 
-sourceCompatibility = 1.5
-version = '1.0'
 
 repositories {
-    mavenCentral()
+  maven { url "http://conjars.org/repo" }
+  mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+  compile 'org.scala-lang:scala-library:2.10.4'
+
+  compile 'org.apache.hadoop:hadoop-core:1.2.1'
+  compile 'org.slf4j:slf4j-simple:1.7.7'
+  compile 'com.twitter:scalding-core_2.10:0.11.2'
+
+  testCompile 'junit:junit:4.11'
 }
